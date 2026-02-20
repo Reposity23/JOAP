@@ -1,0 +1,2 @@
+import { useState } from 'react';import { http } from '../api/http';
+export default function AboutPage(){const [f,sf]=useState(''); return <div className='card p-3'><h4>About</h4><p>Version 1.0.0</p><p>Developed for JOAP Hardware. Credit: John Marwin.</p><textarea className='form-control mb-2' value={f} onChange={e=>sf(e.target.value)} /><button className='btn btn-primary' onClick={async()=>{await http.post('/about/feedback',{message:f}); sf('');}}>Submit Feedback</button></div>}

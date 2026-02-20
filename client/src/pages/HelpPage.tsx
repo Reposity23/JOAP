@@ -1,0 +1,1 @@
+export default function HelpPage(){return <div className='card p-3'><h4>Help</h4><ul><li>Use Inventory to manage stock via adjusting entries.</li><li>Create orders then log billing payments.</li><li>Accounting entries are append-only; use reverse action for corrections.</li></ul></div>}
