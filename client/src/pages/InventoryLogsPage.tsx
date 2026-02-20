@@ -1,0 +1,2 @@
+import { useEffect, useState } from 'react';import { http } from '../api/http';
+export default function InventoryLogsPage(){const [l,s]=useState<any[]>([]); useEffect(()=>{http.get('/inventory/logs').then(r=>s(r.data.data));},[]); return <div className='card p-3'><h4>Inventory Logs</h4><table className='table'><thead><tr><th>Item</th><th>Delta</th><th>Reason</th><th>Date</th></tr></thead><tbody>{l.map(x=><tr key={x._id}><td>{x.itemName}</td><td>{x.delta}</td><td>{x.reason}</td><td>{new Date(x.createdAt).toLocaleString()}</td></tr>)}</tbody></table></div>}
