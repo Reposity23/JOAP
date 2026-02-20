@@ -1,0 +1,2 @@
+import { useEffect,useState } from 'react';import { http } from '../api/http';
+export default function LogsPage(){const [l,s]=useState<any[]>([]); useEffect(()=>{http.get('/logs').then(r=>s(r.data.data));},[]); return <div className='card p-3'><h4>System Logs</h4><table className='table'><thead><tr><th>Action</th><th>User</th><th>Date</th></tr></thead><tbody>{l.map(x=><tr key={x._id}><td>{x.action}</td><td>{x.actorName}</td><td>{new Date(x.createdAt).toLocaleString()}</td></tr>)}</tbody></table></div>}

@@ -1,0 +1,115 @@
+body {
+  background: #f1f2f6;
+}
+
+.joap-shell {
+  min-height: 100vh;
+  display: flex;
+  background: #f1f2f6;
+}
+
+.joap-sidebar {
+  width: 250px;
+  background: #f8f9ff;
+  border-right: 1px solid #e5e8f4;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.joap-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 18px;
+  background: linear-gradient(90deg, #5f43f2, #6d41ff);
+}
+
+.brand-dot { color: #ffbd3b; }
+.brand-text { color: #fff; font-weight: 700; letter-spacing: .5px; text-decoration: none; }
+
+.joap-nav { list-style: none; margin: 0; padding: 14px 10px; }
+.joap-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6d7390;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+.joap-nav-link.active, .joap-nav-link:hover {
+  background: #ece8ff;
+  color: #5f43f2;
+}
+
+.joap-main { flex: 1; min-width: 0; }
+.joap-topbar {
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #5f43f2, #6d41ff);
+  color: white;
+}
+.joap-topbar-title { font-weight: 600; letter-spacing: .3px; }
+.joap-topbar-right { display: flex; align-items: center; gap: 10px; }
+.joap-search-wrap {
+  width: 330px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.13);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+.joap-search-wrap input { border: none; background: transparent; color: white; width: 100%; outline: none; }
+.joap-search-wrap input::placeholder { color: rgba(255,255,255,.9); }
+.joap-logout { border: 0; background: #fff; color: #5f43f2; border-radius: 8px; padding: 8px 12px; font-weight: 700; }
+
+.joap-content { padding: 24px; }
+.joap-footer { text-align: center; padding: 16px; color: #6d7390; font-weight: 600; }
+.joap-search-results { margin: 18px 24px 0; padding: 10px 14px; border: 1px solid #ebeef9; }
+.result-row { display: flex; justify-content: space-between; padding: 6px 0; }
+
+.joap-kpi-card {
+  background: white;
+  border: 1px solid #e8eaf4;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.joap-kpi-card p { margin: 0; font-size: 12px; letter-spacing: 1px; color: #6d7390; font-weight: 700; }
+.joap-kpi-card h4 { margin: 10px 0 0; color: #232846; }
+.kpi-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #635bff;
+  color: white;
+}
+.joap-panel {
+  background: #fff;
+  border: 1px solid #e8eaf4;
+  border-radius: 12px;
+  padding: 16px;
+}
+.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.panel-head h5 { margin: 0; font-size: 14px; letter-spacing: 1px; color: #30395f; }
+.chart-wrap { height: 290px; }
+.slim .mini-list { list-style: none; margin: 0; padding: 0; }
+.slim .mini-list li { display: flex; justify-content: space-between; border-bottom: 1px solid #eff1fb; padding: 10px 0; }
+.muted { color: #8a8fad; }
+
+@media (max-width: 991px) {
+  .joap-sidebar { display: none; }
+  .joap-search-wrap { width: 220px; }
+}
