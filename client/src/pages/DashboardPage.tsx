@@ -28,7 +28,7 @@ export default function DashboardPage() {
               <p>TOTAL REVENUE</p>
               <h4>₱{Number(data.kpis.totalRevenue ?? 0).toLocaleString()}</h4>
             </div>
-            <div className="kpi-icon"><i className="ri-money-dollar-circle-line" /></div>
+            <div className="kpi-icon">₱</div>
           </div>
         </div>
         <div className="col-xl-3 col-md-6">
@@ -37,7 +37,7 @@ export default function DashboardPage() {
               <p>TOTAL ORDERS</p>
               <h4>{data.kpis.totalOrders ?? 0}</h4>
             </div>
-            <div className="kpi-icon"><i className="ri-shopping-bag-3-line" /></div>
+            <div className="kpi-icon">◎</div>
           </div>
         </div>
         <div className="col-xl-3 col-md-6">
@@ -46,7 +46,7 @@ export default function DashboardPage() {
               <p>TOTAL ITEMS</p>
               <h4>{data.kpis.totalItems ?? 0}</h4>
             </div>
-            <div className="kpi-icon"><i className="ri-archive-drawer-line" /></div>
+            <div className="kpi-icon">▣</div>
           </div>
         </div>
         <div className="col-xl-3 col-md-6">
@@ -55,7 +55,7 @@ export default function DashboardPage() {
               <p>PENDING PAYMENTS</p>
               <h4>{data.kpis.pendingPayments ?? 0}</h4>
             </div>
-            <div className="kpi-icon"><i className="ri-time-line" /></div>
+            <div className="kpi-icon">◷</div>
           </div>
         </div>
       </div>

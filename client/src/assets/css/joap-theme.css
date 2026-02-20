@@ -1,21 +1,23 @@
 body {
-  background: #f1f2f6;
+  background: radial-gradient(circle at 10% 10%, #f7f4ff 0, #eff1f7 50%, #eef0f6 100%);
+  font-family: Inter, "Segoe UI", sans-serif;
 }
 
 .joap-shell {
   min-height: 100vh;
   display: flex;
-  background: #f1f2f6;
+  background: transparent;
 }
 
 .joap-sidebar {
-  width: 250px;
-  background: #f8f9ff;
-  border-right: 1px solid #e5e8f4;
+  width: 260px;
+  background: linear-gradient(180deg, #f8f9ff, #f1f3fd 70%, #eef1fb);
+  border-right: 1px solid #dfe3f5;
   position: sticky;
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  box-shadow: inset -1px 0 0 #e4e8fa;
 }
 
 .joap-brand {
@@ -23,87 +25,223 @@ body {
   align-items: center;
   gap: 8px;
   padding: 20px 18px;
-  background: linear-gradient(90deg, #5f43f2, #6d41ff);
+  background: linear-gradient(90deg, #5f43f2, #7044ff);
+  box-shadow: 0 10px 24px rgba(95, 67, 242, 0.33);
 }
 
-.brand-dot { color: #ffbd3b; }
-.brand-text { color: #fff; font-weight: 700; letter-spacing: .5px; text-decoration: none; }
+.brand-dot { color: #ffca4d; }
+.brand-text { color: #fff; font-weight: 800; letter-spacing: .5px; text-decoration: none; font-size: 15px; }
 
-.joap-nav { list-style: none; margin: 0; padding: 14px 10px; }
+.joap-nav { list-style: none; margin: 0; padding: 14px 10px 30px; }
 .joap-nav-link {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #6d7390;
+  color: #5b6388;
   text-decoration: none;
-  font-weight: 600;
-  padding: 10px 12px;
-  border-radius: 10px;
-  margin-bottom: 4px;
+  font-weight: 700;
+  padding: 12px 12px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  transition: .2s ease;
+}
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 12px;
+  background: #edf0ff;
+  color: #5f43f2;
 }
 .joap-nav-link.active, .joap-nav-link:hover {
-  background: #ece8ff;
-  color: #5f43f2;
+  background: linear-gradient(90deg, #ece8ff, #e8e9ff);
+  color: #4f43d8;
+  transform: translateX(2px);
 }
 
 .joap-main { flex: 1; min-width: 0; }
 .joap-topbar {
-  height: 64px;
+  height: 70px;
   padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #5f43f2, #6d41ff);
+  background: linear-gradient(90deg, #5f43f2, #7044ff);
   color: white;
+  box-shadow: 0 8px 18px rgba(95, 67, 242, 0.35);
 }
-.joap-topbar-title { font-weight: 600; letter-spacing: .3px; }
+.joap-topbar-title { font-weight: 700; letter-spacing: .3px; }
 .joap-topbar-right { display: flex; align-items: center; gap: 10px; }
 .joap-search-wrap {
-  width: 330px;
+  width: 340px;
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255,255,255,.13);
-  border-radius: 10px;
-  padding: 8px 10px;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  padding: 9px 12px;
 }
 .joap-search-wrap input { border: none; background: transparent; color: white; width: 100%; outline: none; }
 .joap-search-wrap input::placeholder { color: rgba(255,255,255,.9); }
-.joap-logout { border: 0; background: #fff; color: #5f43f2; border-radius: 8px; padding: 8px 12px; font-weight: 700; }
+.joap-logout {
+  border: 0;
+  background: #fff;
+  color: #5f43f2;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 800;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
 
 .joap-content { padding: 24px; }
-.joap-footer { text-align: center; padding: 16px; color: #6d7390; font-weight: 600; }
-.joap-search-results { margin: 18px 24px 0; padding: 10px 14px; border: 1px solid #ebeef9; }
-.result-row { display: flex; justify-content: space-between; padding: 6px 0; }
+.joap-footer { text-align: center; padding: 16px; color: #6d7390; font-weight: 700; }
+.joap-search-results { margin: 18px 24px 0; padding: 10px 14px; border: 1px solid #ebeef9; border-radius: 14px; }
+.result-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #eceffd; }
+.result-row:last-child { border-bottom: 0; }
+
+.joap-page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.joap-page-head h4 { margin: 0; font-weight: 800; color: #2e3559; letter-spacing: .3px; }
+.action-pills { display: flex; gap: 8px; }
+
+.metric-glass {
+  background: linear-gradient(130deg, rgba(255,255,255,.9), rgba(245,246,255,.9));
+  border: 1px solid #e6eaf9;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 20px rgba(60, 66, 119, 0.08);
+}
+.metric-glass p { margin: 0; font-weight: 700; color: #69739f; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+.metric-glass h3 { margin: 9px 0 0; font-weight: 800; color: #26305f; }
+
+.feature-card {
+  background: #fff;
+  border: 1px solid #e8eaf7;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(74, 78, 120, 0.09);
+}
+.feature-card h5 { margin: 0 0 12px; font-weight: 800; letter-spacing: .6px; color: #2f3763; }
+
+.pill-btn {
+  background: #f3f4ff;
+  color: #5b45ea;
+  border: 1px solid #dcdef8;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.pill-btn:hover { background: #e9e5ff; }
+.pill-btn.solid {
+  background: linear-gradient(90deg, #6045f2, #7447ff);
+  color: white;
+  border-color: transparent;
+}
+
+.joap-input {
+  border: 1px solid #d9def4;
+  border-radius: 12px;
+  padding: 11px 12px;
+  box-shadow: none;
+}
+.joap-input:focus {
+  border-color: #7e66ff;
+  box-shadow: 0 0 0 3px rgba(109, 65, 255, 0.16);
+}
+
+.joap-table thead th {
+  color: #67729d;
+  border-bottom: 1px solid #e5e9f8;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+.joap-table tbody tr {
+  transition: .2s ease;
+}
+.joap-table tbody tr:hover {
+  background: #f8f8ff;
+}
+.joap-table td { vertical-align: middle; }
+
+.status-chip {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.status-chip.healthy { background: #e9fbf2; color: #1e8f57; border-color: #cbf0dd; }
+.status-chip.low { background: #fff8e8; color: #a8730d; border-color: #f5e2ba; }
+.status-chip.critical { background: #ffeef0; color: #bf2a46; border-color: #f5c8d1; }
+
+.state-msg {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f2f4ff;
+  color: #505b86;
+  font-weight: 600;
+}
+.state-msg.error {
+  background: #ffeef1;
+  color: #bf2a46;
+}
+
+.account-list {
+  display: grid;
+  gap: 8px;
+}
+.account-item {
+  border: 1px solid #e8eaf8;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: grid;
+  gap: 2px;
+}
+.account-item strong { color: #343d66; }
+.account-item span { color: #545f89; }
+.account-item small { color: #8a94bc; }
 
 .joap-kpi-card {
   background: white;
   border: 1px solid #e8eaf4;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 12px 22px rgba(71, 79, 129, 0.1);
 }
 .joap-kpi-card p { margin: 0; font-size: 12px; letter-spacing: 1px; color: #6d7390; font-weight: 700; }
-.joap-kpi-card h4 { margin: 10px 0 0; color: #232846; }
+.joap-kpi-card h4 { margin: 10px 0 0; color: #232846; font-weight: 800; }
 .kpi-icon {
   width: 48px;
   height: 48px;
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: #635bff;
+  background: linear-gradient(135deg, #6556ff, #4f43d8);
   color: white;
 }
 .joap-panel {
   background: #fff;
   border: 1px solid #e8eaf4;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 16px;
+  box-shadow: 0 12px 24px rgba(71, 79, 129, 0.1);
 }
 .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.panel-head h5 { margin: 0; font-size: 14px; letter-spacing: 1px; color: #30395f; }
+.panel-head h5 { margin: 0; font-size: 14px; letter-spacing: 1px; color: #30395f; font-weight: 800; }
 .chart-wrap { height: 290px; }
 .slim .mini-list { list-style: none; margin: 0; padding: 0; }
 .slim .mini-list li { display: flex; justify-content: space-between; border-bottom: 1px solid #eff1fb; padding: 10px 0; }
@@ -111,5 +249,6 @@ body {
 
 @media (max-width: 991px) {
   .joap-sidebar { display: none; }
-  .joap-search-wrap { width: 220px; }
+  .joap-search-wrap { width: 210px; }
+  .joap-page-head { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
